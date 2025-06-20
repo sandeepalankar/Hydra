@@ -6,17 +6,17 @@ active_window:
   volumetric_map:
     voxels_per_side: 16
     voxel_size: 0.1
-    truncation_distance: 0.4
+    truncation_distance: 0.6
   tsdf:
-    extra_integration_distance: 2.0
+    extra_integration_distance: 3.0
     use_constant_weight: true
     interpolation_method:
       type: adaptive
-      max_depth_difference_m: 0.5
+      max_depth_difference_m: 0.75
     semantic_integrator:
       type: SingleLabelIntegrator
   mesh:
-    min_weight: 0.5
+    min_weight: 0.1
 frontend:
   pgmo:
     time_horizon: 15.0
