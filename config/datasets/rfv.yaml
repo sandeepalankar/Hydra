@@ -1,27 +1,20 @@
 ---
 map_window:
   type: spatial
-  max_radius_m: 8.0
+  max_radius_m: 10.0
 active_window:
   volumetric_map:
     voxels_per_side: 16
-    voxel_size: 0.08 # 0.1
-    truncation_distance: 0.8 # 0.6
+    voxel_size: 0.1
+    truncation_distance: 0.4
   tsdf:
-    extra_integration_distance: 3.0
-    use_constant_weight: true
-    interpolation_method:
-      type: adaptive
-      max_depth_difference_m: 0.75
     semantic_integrator:
       type: SingleLabelIntegrator
-  mesh:
-    min_weight: 0.05 #0.1
 frontend:
   pgmo:
     time_horizon: 15.0
     d_graph_resolution: 2.5
-    mesh_resolution: 0.004 # 0.005
+    mesh_resolution: 0.005
   objects:
     min_cluster_size: 40
     cluster_tolerance: 0.25
@@ -41,7 +34,7 @@ frontend:
     min_places_component_size: 3
     filter_ground: false
     gvd:
-      max_distance_m: 4.5
+      max_distance_m: 5.0
       min_distance_m: 0.2
       min_diff_m: 0.1
       voronoi_config:
